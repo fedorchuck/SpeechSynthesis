@@ -29,28 +29,15 @@ namespace SpeechSynthesis
         {
             Logic logic = new Logic();
             logic.Text = new TextRange(richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd).Text.ToLower();
-            
-            String a = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
-            Char[] ch = a.ToCharArray();
-            String b = null;
-            for (int i = 0; i < ch.Length; i++)
-            {
-                if (ch[i]!=' ') 
-                b += "\"" + ch[i].ToString() + "\", ";
-            }
 
             Paragraph outPutString = new Paragraph();
-            outPutString.Inlines.Add(b.ToLower());
+            outPutString.Inlines.Add(logic.tmp());
             richTextBox1.Document.Blocks.Add(outPutString);
-
-            logic.FillDictionary();
 
             logic.Dictionary();
             logic.GetSyllables();
             logic.CreateSpeach();
             logic.SpeachText();
-
-            //MessageBox.Show(logic.Text);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

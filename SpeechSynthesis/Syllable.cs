@@ -10,26 +10,34 @@ namespace SpeechSynthesis
     [DataContract]
     public class Syllable
     {
-        private String _name;
-        private Int32 _value;
+        private String _forPrinting;
+        private String _namedOfLetter;
+        private String _inWriting;
 
         [DataMember]
-        public string Name
+        public string ForPrinting
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _forPrinting; }
+            set { _forPrinting = value; }
         }
 
         [DataMember]
-        public int Value
+        public string NamedOfLetter
         {
-            get { return _value; }
-            set { _value = value; }
+            get { return _namedOfLetter; }
+            set { _namedOfLetter = value; }
+        }
+
+        [DataMember]
+        public string InWriting
+        {
+            get { return _inWriting; }
+            set { _inWriting = value; }
         }
 
         public override string ToString()
         {
-            return string.Format("Name: [{0}], Value: {1}", Name, Value);
+            return string.Format("in writing: [{0}], named of letter: {1}, to writing{2}", ForPrinting, NamedOfLetter, InWriting);
         }
     }
 }
