@@ -29,13 +29,13 @@ namespace SpeechSynthesis
         {
             Logic logic = new Logic();
             logic.Text = new TextRange(richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd).Text.ToLower();
-
+//logic.Dictionary();
             Paragraph outPutString = new Paragraph();
-            outPutString.Inlines.Add(logic.tmp());
+            outPutString.Inlines.Add(logic.GetSyllables());
             richTextBox1.Document.Blocks.Add(outPutString);
 
-            logic.Dictionary();
-            logic.GetSyllables();
+            
+            //logic.GetSyllables();
             logic.CreateSpeach();
             logic.SpeachText();
         }

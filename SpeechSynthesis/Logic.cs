@@ -7,12 +7,20 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace SpeechSynthesis
 {
     class Logic
     {
         private String _text;
+        private RecordsLibrary _object_from_file;//=new RecordsLibrary();
+//List<Syllable> records = _object_from_file.Records;
+        public RecordsLibrary ObjectFromFile
+        {
+            get { return _object_from_file; }
+            set { _object_from_file = value;}
+        }
 
         public string Text
         {
@@ -22,39 +30,15 @@ namespace SpeechSynthesis
 
         public void Dictionary()
         {
-            RecordsLibrary object_from_file = Serialization.DeserializeObject("c:\\tmp\\SpeechSynthesis.xml");
-
-            if (object_from_file == null)
-                return;
-
-            String output = null;
-            List<Syllable> records = object_from_file.Records;
-            foreach (Syllable record in records)
-            {
-                output += record.ToString();
-            }
+            ObjectFromFile = Serialization.DeserializeObject("c:\\tmp\\SpeechSynthesis.xml");
         }
 
-        public String tmp()
+        public String GetSyllables()
         {
-            RecordsLibrary object_from_file = Serialization.DeserializeObject("c:\\tmp\\SpeechSynthesis.xml");
-
-            if (object_from_file == null)
-                return null;
-
-            String output = null;
-            List<Syllable> records = object_from_file.Records;
-            foreach (Syllable record in records)
-            {
-                output += record.ToString();
-                output += Environment.NewLine;
-            }
-            return output;
-        }
-
-        public void GetSyllables()
-        {
-
+            if (ObjectFromFile != null)
+                return ObjectFromFile.ToString();
+            else
+                return String.Format("Object reference not set to an instance of an object.");
         }
 
         public void CreateSpeach()
