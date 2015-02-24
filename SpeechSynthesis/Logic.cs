@@ -14,8 +14,8 @@ namespace SpeechSynthesis
     class Logic
     {
         private String _text;
-        private RecordsLibrary _object_from_file;//=new RecordsLibrary();
-//List<Syllable> records = _object_from_file.Records;
+        private RecordsLibrary _object_from_file;
+
         public RecordsLibrary ObjectFromFile
         {
             get { return _object_from_file; }
@@ -30,20 +30,40 @@ namespace SpeechSynthesis
 
         public void Dictionary()
         {
-            ObjectFromFile = Serialization.DeserializeObject("c:\\tmp\\SpeechSynthesis.xml");
+            ObjectFromFile = Serialization.DeserializeObject(@"tmp\SpeechSynthesis.xml");
+            /*if (ObjectFromFile != null)
+                return ObjectFromFile.ToString();
+            else
+                return String.Format("Object reference not set to an instance of an object.");*/
         }
 
         public String GetSyllables()
         {
-            if (ObjectFromFile != null)
-                return ObjectFromFile.ToString();
-            else
-                return String.Format("Object reference not set to an instance of an object.");
+            String st = Text;
+            Char[] ch = st.ToCharArray();
+            String transcription = String.Empty;
+
+            List<Syllable> syllables = ObjectFromFile.Records;
+
+            //TODO: rules must be here
+            for (int i = 0; i < st.Length; i++)
+            {
+                foreach (var syllable in syllables)
+                {
+                    if (syllable.ForPrinting == ch[i].ToString())
+                    {
+                        transcription += syllable.NamedOfLetter;//.InWriting;
+                        break;
+                    }
+                }
+            }
+
+            return transcription;
         }
 
         public void CreateSpeach()
         {
-            
+
         }
 
         public void SpeachText()
