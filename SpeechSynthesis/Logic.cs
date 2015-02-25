@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
+using Microsoft.DirectX;
+using Microsoft.DirectX.AudioVideoPlayback;
 
 namespace SpeechSynthesis
 {
@@ -52,7 +54,19 @@ namespace SpeechSynthesis
                 {
                     if (syllable.ForPrinting == ch[i].ToString())
                     {
-                        transcription += syllable.InWriting;
+                        if (ch[i]>-1)
+                        { 
+                            switch (syllable.ForPrinting)
+                            {
+                                case "e":
+                                    if (ch[i - 1].ToString().ToLower() == "h")
+                                        transcription += "e";
+                                    break;
+                                default:
+                                    transcription += syllable.InWriting;
+                                    break;
+                            }
+                        }
                         break;
                     }
                 }
@@ -68,7 +82,8 @@ namespace SpeechSynthesis
 
         public void SpeachText()
         {
-            
+            /*Audio song = new Audio(@"C:\a great big world - say something.mp3");
+            song.Play();*/
         }
     }
 }
