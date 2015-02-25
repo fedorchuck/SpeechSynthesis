@@ -33,9 +33,7 @@ namespace SpeechSynthesis
             Paragraph outPutString = new Paragraph();
             outPutString.Inlines.Add(logic.GetSyllables());
             richTextBox1.Document.Blocks.Add(outPutString);
-
             
-            //logic.GetSyllables();
             logic.CreateSpeach();
             logic.SpeachText();
         }

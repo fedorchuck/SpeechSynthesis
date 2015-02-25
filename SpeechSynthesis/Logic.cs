@@ -52,7 +52,7 @@ namespace SpeechSynthesis
                 {
                     if (syllable.ForPrinting == ch[i].ToString())
                     {
-                        transcription += syllable.NamedOfLetter;//.InWriting;
+                        transcription += syllable.InWriting;
                         break;
                     }
                 }
