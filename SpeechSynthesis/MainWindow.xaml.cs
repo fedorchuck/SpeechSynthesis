@@ -30,17 +30,15 @@ namespace SpeechSynthesis
             logic.Dictionary();
 
 
-            Paragraph outPutString = new Paragraph();
+            /*Paragraph outPutString = new Paragraph();
             outPutString.Inlines.Add(logic.GetSyllables());
-            richTextBox1.Document.Blocks.Add(outPutString);
-            
-            logic.CreateSpeach();
-            logic.SpeachText();
+            richTextBox1.Document.Blocks.Add(outPutString);*/
+            logic.SpeachText(logic.GetSyllables());
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            //File.WriteAllBytes(@"PATH.mp3", audioBytes);  
         }
     }
 }

@@ -10,111 +10,107 @@
     -->
      <Syllable>
       <ForPrinting>A</ForPrinting>
-      <InWriting>ei</InWriting>
+      <InWriting>10101</InWriting>
     </Syllable>
      <Syllable>
       <ForPrinting>B</ForPrinting>
-      <InWriting>b</InWriting>
+      <InWriting>10102</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>C</ForPrinting>
-      <InWriting>s</InWriting>
+      <InWriting>10103</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>D</ForPrinting>
-      <InWriting>d</InWriting>
+      <InWriting>10104</InWriting>
     </Syllable>
      <Syllable>
       <ForPrinting>E</ForPrinting>
-      <InWriting>i:</InWriting>
+      <InWriting>10105</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>F</ForPrinting>
-      <InWriting>f</InWriting>
+      <InWriting>10106</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>G</ForPrinting>
-      <InWriting>dj</InWriting>
+      <InWriting>10107</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>H</ForPrinting>
-      <InWriting>h</InWriting>
+      <InWriting>10108</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>I</ForPrinting>
-      <InWriting>ai</InWriting>
+      <InWriting>10109</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>J</ForPrinting>
-      <InWriting>dj</InWriting>
+      <InWriting>10110</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>K</ForPrinting>
-      <InWriting>k</InWriting>
+      <InWriting>10111</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>L</ForPrinting>
-      <InWriting>l</InWriting>
+      <InWriting>10112</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>M</ForPrinting>
-      <InWriting>m</InWriting>
+      <InWriting>10113</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>N</ForPrinting>
-      <InWriting>n</InWriting>
+      <InWriting>101014</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>O</ForPrinting>
-      <InWriting>ou</InWriting>
+      <InWriting>10115</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>P</ForPrinting>
-      <InWriting>p</InWriting>
+      <InWriting>10116</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>Q</ForPrinting>
-      <InWriting>kw</InWriting>
+      <InWriting>10117</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>R</ForPrinting>
-      <InWriting>r</InWriting>
+      <InWriting>10118</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>S</ForPrinting>
-      <InWriting>s</InWriting>
+      <InWriting>10119</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>T</ForPrinting>
-      <InWriting>t</InWriting>
+      <InWriting>10120</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>U</ForPrinting>
-      <InWriting>ju:</InWriting>
+      <InWriting>10121</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>V</ForPrinting>
-      <InWriting>v</InWriting>
+      <InWriting>10122</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>W</ForPrinting>
-      <InWriting>w</InWriting>
+      <InWriting>10123</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>X</ForPrinting>
-      <InWriting>ks</InWriting>
+      <InWriting>10124</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>Y</ForPrinting>
-      <InWriting>j</InWriting>
+      <InWriting>10125</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>Z</ForPrinting>
-      <InWriting>z</InWriting>
-    </Syllable>
-    <Syllable>
-      <ForPrinting>a</ForPrinting>
-      <InWriting>ae</InWriting>
+      <InWriting>10126</InWriting>
     </Syllable>
     <!-- 
     #########################################################################################################################################
@@ -123,89 +119,93 @@
     #                                                                                                                                       #
     #########################################################################################################################################
     -->
+     <Syllable>
+      <ForPrinting>a</ForPrinting>
+      <InWriting>10004</InWriting>
+    </Syllable>
     <Syllable>
       <ForPrinting>a</ForPrinting>
-      <InWriting>ei</InWriting>
+      <InWriting>10014</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>b</ForPrinting>
-      <InWriting>b</InWriting>
+      <InWriting>10202</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>c</ForPrinting>
-      <InWriting>s</InWriting>
+      <InWriting>10208</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>c</ForPrinting>
-      <InWriting>k</InWriting>
+      <InWriting>10204</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>d</ForPrinting>
-      <InWriting>d</InWriting>
+      <InWriting>10214</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>e</ForPrinting>
-      <InWriting>i:</InWriting>
+      <InWriting>10001</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>e</ForPrinting>
-      <InWriting>e</InWriting>
+      <InWriting>10003</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>f</ForPrinting>
-      <InWriting>f</InWriting>
+      <InWriting>10206</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>g</ForPrinting>
-      <InWriting>g</InWriting>
+      <InWriting>10205</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>g</ForPrinting>
-      <InWriting>dj</InWriting>
+      <InWriting>10220</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>h</ForPrinting>
-      <InWriting>h</InWriting>
+      <InWriting>10211</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>i</ForPrinting>
-      <InWriting>i</InWriting>
+      <InWriting>10002</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>i</ForPrinting>
-      <InWriting>ai</InWriting>
+      <InWriting>10013</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>j</ForPrinting>
-      <InWriting>dj</InWriting>
+      <InWriting>10220</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>k</ForPrinting>
-      <InWriting>k</InWriting>
+      <InWriting>10204</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>l</ForPrinting>
-      <InWriting>l</InWriting>
+      <InWriting>10216</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>m</ForPrinting>
-      <InWriting>m</InWriting>
+      <InWriting>10203</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>n</ForPrinting>
-      <InWriting>n</InWriting>
+      <InWriting>10215</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>o</ForPrinting>
-      <InWriting>ou</InWriting>
+      <InWriting>10017</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>o</ForPrinting>
-      <InWriting>~c</InWriting>
+      <InWriting>10006</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>p</ForPrinting>
-      <InWriting>p</InWriting>
+      <InWriting>10201</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>q</ForPrinting>
@@ -213,52 +213,48 @@
     </Syllable>
     <Syllable>
       <ForPrinting>r</ForPrinting>
-      <InWriting>r</InWriting>
+      <InWriting>10210</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>s</ForPrinting>
-      <InWriting>s</InWriting>
+      <InWriting>10208</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>t</ForPrinting>
-      <InWriting>t</InWriting>
+      <InWriting>10213</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>u</ForPrinting>
-      <InWriting>ju:</InWriting>
+      <InWriting>10221</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>u</ForPrinting>
-      <InWriting>^</InWriting>
+      <InWriting>10010</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>u</ForPrinting>
-      <InWriting>u</InWriting>
+      <InWriting>10011</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>v</ForPrinting>
-      <InWriting>v</InWriting>
+      <InWriting>10207</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>w</ForPrinting>
-      <InWriting>w</InWriting>
+      <InWriting>10225</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>x</ForPrinting>
       <InWriting>ks</InWriting>
     </Syllable>
     <Syllable>
-      <ForPrinting>x</ForPrinting>
-      <InWriting>gz</InWriting>
-    </Syllable>
-    <Syllable>
       <ForPrinting>y</ForPrinting>
-      <InWriting>j</InWriting>
+      <InWriting>10212</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>z</ForPrinting>
-      <InWriting>z</InWriting>
-    </Syllable>
+      <InWriting>10209</InWriting>
+    </Syllable> 
     <!-- 
     #########################################################################################################################################
     #                                                                                                                                       #
@@ -268,7 +264,15 @@
     -->
     <Syllable>
       <ForPrinting> </ForPrinting>
-      <InWriting>_</InWriting>
+      <InWriting>00000</InWriting>
     </Syllable>  
+     <Syllable>
+      <ForPrinting>.</ForPrinting>
+      <InWriting>00000</InWriting>
+    </Syllable>  
+    <Syllable>
+      <ForPrinting>,</ForPrinting>
+      <InWriting>00000</InWriting>
+    </Syllable>   
   </Records>
 </RecordsLibrary>

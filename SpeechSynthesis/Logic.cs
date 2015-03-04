@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Packaging;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
@@ -17,6 +19,14 @@ namespace SpeechSynthesis
     {
         private String _text;
         private RecordsLibrary _object_from_file;
+        private String _transcription;
+        private List<String> queue = new List<string>();
+
+        public string Transcription
+        {
+            get { return _transcription; }
+            set { if (!String.IsNullOrEmpty(value)) _transcription += value; }
+        }
 
         public RecordsLibrary ObjectFromFile
         {
@@ -32,7 +42,7 @@ namespace SpeechSynthesis
 
         public void Dictionary()
         {
-            ObjectFromFile = Serialization.DeserializeObject(@"tmp\SpeechSynthesis.xml");
+            ObjectFromFile = Serialization.DeserializeObject(@"vol\SpeechSynthesis.xml");
             /*if (ObjectFromFile != null)
                 return ObjectFromFile.ToString();
             else
@@ -43,7 +53,6 @@ namespace SpeechSynthesis
         {
             String st = Text;
             Char[] ch = st.ToCharArray();
-            String transcription = String.Empty;
 
             List<Syllable> syllables = ObjectFromFile.Records;
 
@@ -54,36 +63,77 @@ namespace SpeechSynthesis
                 {
                     if (syllable.ForPrinting == ch[i].ToString())
                     {
-                        if (ch[i]>-1)
+                        if (ch.Length>3)
                         { 
                             switch (syllable.ForPrinting)
                             {
+                                case "c":
+                                        if (ch[i - 1].ToString().ToLower() == "e")  AddSyllable("s");
+                                        if (ch[i - 1].ToString().ToLower() == "i")  AddSyllable("s");
+                                        if (ch[i - 1].ToString().ToLower() == "y")  AddSyllable("s");
+                                    break;
                                 case "e":
-                                    if (ch[i - 1].ToString().ToLower() == "h")
-                                        transcription += "e";
+                                        if (ch[i - 1].ToString().ToLower() == "h")  AddSyllable("e");
                                     break;
                                 default:
-                                    transcription += syllable.InWriting;
+                                        AddSyllable(syllable.InWriting);
                                     break;
                             }
+                        }
+                        else
+                        {
+                            AddSyllable(syllable.InWriting);
                         }
                         break;
                     }
                 }
             }
 
-            return transcription;
+            //return transcription;
+            return Transcription;
         }
-
+        
         public void CreateSpeach()
         {
-
+            foreach (String stringNumbers in queue)
+            {
+                if (String.IsNullOrEmpty(stringNumbers) || String.IsNullOrWhiteSpace(stringNumbers))
+                    Console.Beep(700,100);
+                else
+                {
+                    String way = "vol\\";
+                    String expansion = ".wav";
+                    String number = stringNumbers;
+                    try
+                    {
+                        using (Audio voice = new Audio(way + number + expansion))
+                        {
+                            voice.Play();
+                            Thread.Sleep((int)(voice.Duration*1000));
+                            voice.Dispose();
+                        }
+                    }
+                    catch (DirectXException)//no sound on this index.
+                    {
+                        Console.Beep(700, 100);
+                    }
+                }
+            }
         }
 
-        public void SpeachText()
+        public void SpeachText(String stringSyllables)
         {
-            /*Audio song = new Audio(@"C:\a great big world - say something.mp3");
-            song.Play();*/
+            String[] toSay = stringSyllables.Split(' ');
+            for (int i = 0; i < toSay.Length; i++)
+                if (!String.IsNullOrEmpty(toSay[i])||!String.IsNullOrWhiteSpace(toSay[i]))
+                    queue.Add(toSay[i]);
+
+            CreateSpeach();
+        }
+
+        private void AddSyllable(String symbol)
+        {
+            Transcription = symbol + " ";
         }
     }
 }

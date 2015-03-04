@@ -30,7 +30,7 @@ namespace SpeechSynthesis
 
         public override string ToString()
         {
-            return string.Format("in writing: [{0}], to writing{1}", ForPrinting, InWriting);
+            return string.Format("in writing: [{0}], to writing: [{1}]", ForPrinting, InWriting);
         }
     }
 }
