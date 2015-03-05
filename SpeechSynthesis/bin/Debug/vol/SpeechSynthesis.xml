@@ -143,10 +143,10 @@
       <ForPrinting>d</ForPrinting>
       <InWriting>10214</InWriting>
     </Syllable>
-    <Syllable>
+    <!-- <Syllable>
       <ForPrinting>e</ForPrinting>
       <InWriting>10001</InWriting>
-    </Syllable>
+    </Syllable> -->
     <Syllable>
       <ForPrinting>e</ForPrinting>
       <InWriting>10003</InWriting>
@@ -227,10 +227,10 @@
       <ForPrinting>u</ForPrinting>
       <InWriting>10221</InWriting>
     </Syllable>
-    <Syllable>
+    <!-- <Syllable>
       <ForPrinting>u</ForPrinting>
       <InWriting>10010</InWriting>
-    </Syllable>
+    </Syllable> -->
     <Syllable>
       <ForPrinting>u</ForPrinting>
       <InWriting>10011</InWriting>
