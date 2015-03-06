@@ -6,12 +6,19 @@
         <Button x:Name="button1" Content="play" HorizontalAlignment="Left" Margin="163,257,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Button x:Name="button3" Content="save" HorizontalAlignment="Left" Margin="277,257,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" IsEnabled="False"/>
 
-
-
         <RichTextBox x:Name="richTextBox1" HorizontalAlignment="Left" Height="216" Margin="33,24,0,0" VerticalAlignment="Top" Width="456">
             <FlowDocument>
                 <Paragraph>
-                    <Run Text="Hello world."/>
+                    <Run Text="The following message is transmitted at the request of local authorities. 
+		   		At 9:47 AM, Mountain Time, a disaster of unknown type has occurred at the Black Mesa Research Facility causing significant damage and failure to various power and communication systems in the surrounding areas. 
+		   		An immediate evacuation order has been issued for all residents within a 75 mile radius of the facility, and on-site military has been dispatched to provide assistance. 
+		   		Make sure to bring an emergency supply of food, water, clothing, first aid kit, flashlights with extra batteries, and battery powered radios. 
+		   		Follow local evacuation routes which have been marked by local authorities and only use one vehicle. 
+		   		Do not return to the warning area until the all clear has been given. 
+		   		If you are not in the evacuation zone stay where you are. 
+		   		If you are within the evacuation area and have no transportation locate your nearest police department or military officer. 
+		   		Do not use telephones or cell phones except in the case of emergencies. 
+		   		Stay tuned to local news media outlets for further details and information on this situation. "/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>

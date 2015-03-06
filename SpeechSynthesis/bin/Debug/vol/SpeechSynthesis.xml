@@ -123,10 +123,10 @@
       <ForPrinting>a</ForPrinting>
       <InWriting>10004</InWriting>
     </Syllable>
-    <Syllable>
+    <!-- <Syllable>
       <ForPrinting>a</ForPrinting>
       <InWriting>10014</InWriting>
-    </Syllable>
+    </Syllable> -->
     <Syllable>
       <ForPrinting>b</ForPrinting>
       <InWriting>10202</InWriting>
@@ -159,10 +159,10 @@
       <ForPrinting>g</ForPrinting>
       <InWriting>10205</InWriting>
     </Syllable>
-    <Syllable>
+    <!-- <Syllable>
       <ForPrinting>g</ForPrinting>
       <InWriting>10220</InWriting>
-    </Syllable>
+    </Syllable> -->
     <Syllable>
       <ForPrinting>h</ForPrinting>
       <InWriting>10211</InWriting>
@@ -171,10 +171,10 @@
       <ForPrinting>i</ForPrinting>
       <InWriting>10002</InWriting>
     </Syllable>
-    <Syllable>
+    <!-- <Syllable>
       <ForPrinting>i</ForPrinting>
       <InWriting>10013</InWriting>
-    </Syllable>
+    </Syllable> -->
     <Syllable>
       <ForPrinting>j</ForPrinting>
       <InWriting>10220</InWriting>
@@ -195,10 +195,10 @@
       <ForPrinting>n</ForPrinting>
       <InWriting>10215</InWriting>
     </Syllable>
-    <Syllable>
+    <!-- <Syllable>
       <ForPrinting>o</ForPrinting>
       <InWriting>10017</InWriting>
-    </Syllable>
+    </Syllable> -->
     <Syllable>
       <ForPrinting>o</ForPrinting>
       <InWriting>10006</InWriting>
@@ -209,7 +209,7 @@
     </Syllable>
     <Syllable>
       <ForPrinting>q</ForPrinting>
-      <InWriting>kw</InWriting>
+      <InWriting>10230</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>r</ForPrinting>
@@ -231,10 +231,10 @@
       <ForPrinting>u</ForPrinting>
       <InWriting>10010</InWriting>
     </Syllable> -->
-    <Syllable>
+    <!-- <Syllable>
       <ForPrinting>u</ForPrinting>
       <InWriting>10011</InWriting>
-    </Syllable>
+    </Syllable> -->
     <Syllable>
       <ForPrinting>v</ForPrinting>
       <InWriting>10207</InWriting>
@@ -245,7 +245,7 @@
     </Syllable>
     <Syllable>
       <ForPrinting>x</ForPrinting>
-      <InWriting>ks</InWriting>
+      <InWriting>10229</InWriting>
     </Syllable>
     <Syllable>
       <ForPrinting>y</ForPrinting>

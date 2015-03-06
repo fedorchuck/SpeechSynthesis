@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Documents;
 using Microsoft.DirectX;
 using Microsoft.DirectX.AudioVideoPlayback;
+using Microsoft.DirectX.PrivateImplementationDetails;
 
 namespace SpeechSynthesis
 {
@@ -73,6 +74,7 @@ namespace SpeechSynthesis
 
                         //duplicate letters.
                         if (syllable.ForPrinting.Equals(ch[i + 1].ToString()))   break;
+                        
 
                         //special rules (reading).
                         if (i < 1) //if it's first letter
@@ -81,86 +83,233 @@ namespace SpeechSynthesis
                             {
                                 switch (syllable.ForPrinting)
                                 {
-                                    case "u":
-                                        AddSyllable("10010");
+                                    case  "a":
+                                        if ((ch[i + 1].Equals('i')) && (ch[i + 2].Equals('r'))) break;
+                                        else if ((ch[i + 1].Equals('r')) && (ch[i + 2].Equals('e'))) break;
+                                        else if (ch[i + 1].Equals('i')) break;
+                                        else if (ch[i + 1].Equals('y')) break;
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "b":
+                                        if (ch[i + 1].Equals('t')) break;
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "c":
+                                        if (ch[i + 1].Equals('e')) AddSyllable('s');
+                                        else if (ch[i + 1].Equals('i')) AddSyllable('s');
+                                        else if (ch[i + 1].Equals('y')) AddSyllable('s');
+                                        else if (ch[i + 1].Equals('k')) break;
+                                        else if (ch[i + 1].Equals('h')) break;
+                                        else if (ch[i + 1].Equals('a')) AddSyllable('k');
+                                        else AddSyllable('k');
+                                        break;
+                                    case "e": 
+                                         if (ch[i + 1].Equals('a')) break;
+                                         else if (ch[i + 1].Equals('i')) break;
+                                         else if (ch[i + 1].Equals('w')) break;
+                                         else if (ch[i + 1].Equals('y')) break;
+                                         else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "g":
+                                        if (ch[i + 1].Equals('n')) break;
+                                        else AddSyllable(syllable.InWriting);
                                         break;
                                     case "j":
                                         AddSyllable("10220");
                                         break;
-                                    case "c":
-                                        if (ch[i + 1].ToString().ToLower().Equals("e")) AddSyllable('s');
-                                        else if (ch[i + 1].ToString().ToLower().Equals("i")) AddSyllable('s');
-                                        else if (ch[i + 1].ToString().ToLower().Equals("y")) AddSyllable('s');
-                                        else if (ch[i + 1].ToString().ToLower().Equals("k")) break;
-                                        else if (ch[i + 1].ToString().ToLower().Equals("h")) break;
-                                        else if (ch[i + 1].ToString().ToLower().Equals("a")) AddSyllable('k');
-                                        else AddSyllable('k');
+                                    case "k":
+                                        if (ch[i + 1].Equals('n')) break;
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "o":
+                                        if (ch[i + 1].Equals('r')) AddSyllable("10007");
+                                        else if (ch[i + 1].Equals('u')) break;
+                                        else if (ch[i + 1].Equals('i')) break;
+                                        else if (ch[i + 1].Equals('y')) break;
+                                        else AddSyllable(syllable.ForPrinting);
+                                        break;
+                                    case "p":
+                                        if (ch[i + 1].Equals('h')) break;
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "s":
+                                        if (ch[i + 1].Equals('h')) break;
+                                        else if (ch[i + 1].Equals('u')) AddSyllable("10217");
+                                        else AddSyllable('s');
+                                        break;
+                                    case "t":
+                                        if (ch[i + 1].Equals('h')) break;
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "u":
+                                        AddSyllable("10010");
+                                        break;
+                                    case "w":
+                                        if (ch[i + 1].Equals('r')) break;
+                                        else if ((ch[i + 1].Equals('h'))&&(ch[i + 2].Equals('o'))) AddSyllable('h');
+                                        else if (ch[i + 1].Equals('h')) AddSyllable('w');
+                                        else AddSyllable(syllable.ForPrinting);
                                         break;
                                     default: AddSyllable(syllable.InWriting);   break;
                                 }
                             }
                             else AddSyllable(syllable.InWriting); 
                         }
-                        else
+                        else //if it isn't first letter TODO:
                         {
                             if (ch.Length > 3)
                             {
+                                if (syllable.ForPrinting.Equals(ch[i - 1].ToString()))
+                                {
+                                    switch (syllable.ForPrinting)//duplicate letters
+                                    {
+                                        case "u":
+                                            AddSyllable("10012");
+                                            break;
+                                        case "o":
+                                            if (ch[i + 1].Equals('r')) break;
+                                            else AddSyllable(syllable.InWriting);
+                                            break;
+                                        case "e":
+                                            AddSyllable("10001");
+                                            break;
+                                        default: AddSyllable(syllable.InWriting); break;
+                                    }
+                                    break;
+                                }
                                 switch (syllable.ForPrinting)
                                 {
+                                    case "a":
+                                        if ((ch[i - 1].Equals('w'))&&(ch[i+1].Equals('r'))) AddSyllable("10007");
+                                        else if ((ch[i + 1].Equals('i')) && (ch[i + 2].Equals('r'))) break;
+                                        else if ((ch[i + 1].Equals('r')) && (ch[i + 2].Equals('e'))) break;
+                                        else if (ch[i - 1].Equals('e')) AddSyllable("10001");
+                                        else if (ch[i + 1].Equals('r')) AddSyllable("10005");
+                                        else if (ch[i + 1].Equals('i')) break;
+                                        else if (ch[i + 1].Equals('y')) break;
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "b":
+                                        if (ch[i + 1].Equals('t')) break;
+                                        if (ch[i - 1].Equals('m')) break;
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
                                     case "c":
-                                        if (ch[i + 1].ToString().ToLower().Equals("e")) AddSyllable('s');
-                                        else if (ch[i + 1].ToString().ToLower().Equals("i")) AddSyllable('s');
-                                        else if (ch[i + 1].ToString().ToLower().Equals("y")) AddSyllable('s');
-                                        else if (ch[i + 1].ToString().ToLower().Equals("k")) break;
-                                        else if (ch[i + 1].ToString().ToLower().Equals("h")) break;
-                                        else if (ch[i + 1].ToString().ToLower().Equals("a")) AddSyllable('k');
+                                        if (ch[i + 1].Equals('e')) AddSyllable('s');
+                                        else if (ch[i + 1].Equals('i')) AddSyllable('s');
+                                        else if (ch[i + 1].Equals('y')) AddSyllable('s');
+                                        else if (ch[i + 1].Equals('k')) break;
+                                        else if (ch[i + 1].Equals('h')) break;
+                                        else if (ch[i + 1].Equals('a')) AddSyllable('k');
                                         else AddSyllable('k');
                                         break;
+                                    case "e":
+                                        if ((ch[i + 1].Equals('r')) && (ch[i + 2].Equals('e'))) break;
+                                        else if ((ch[i - 1].Equals('r')) && (ch[i - 2].Equals('e'))) AddSyllable("10018");
+                                        else if ((ch[i - 1].Equals('e')) && (ch[i + 1].Equals('r'))) break;
+                                        else if ((ch[i - 1].Equals('r')) && (ch[i - 2].Equals('a'))) AddSyllable("10020");
+                                        else if ((ch[i - 1].Equals('r')) && (ch[i - 2].Equals('u'))) AddSyllable("10019");
+                                        else if (ch[i - 1].Equals('e')) AddSyllable("10001");
+                                        else if (ch[i - 1].Equals('h')) AddSyllable("10004");
+                                        else if (ch[i + 1].Equals('\r')) break;
+                                        else if (ch[i + 1].Equals('r')) AddSyllable("10009");
+                                        else if (ch[i + 1].Equals('w')) break;
+                                        else if (ch[i + 1].Equals('a')) break;
+                                        else if (ch[i + 1].Equals('i')) break;
+                                        else if (ch[i + 1].Equals('y')) break;
+                                        else AddSyllable("10001");
+                                        break;
                                     case "t":
-                                        if (ch[i + 1].ToString().ToLower().Equals("h")) break;
+                                        if (ch[i + 1].Equals('h')) break;
                                         else AddSyllable(syllable.InWriting);
                                         break;
                                     case "h":
-                                        if (ch[i - 1].ToString().ToLower().Equals("t")) AddSyllable("10228");
-                                        else if (ch[i - 1].ToString().ToLower().Equals("s")) AddSyllable("10217");
-                                        else if (ch[i - 1].ToString().ToLower().Equals("c")) AddSyllable("10219");
+                                        if (ch[i - 1].Equals('t')) AddSyllable("10228");
+                                        else if (ch[i - 1].Equals('s')) AddSyllable("10217");
+                                        else if (ch[i - 1].Equals('c')) AddSyllable("10219");
+                                        else if (ch[i - 1].Equals('w')) break;
+                                        else if (ch[i - 1].Equals('p')) AddSyllable('f');
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "p":
+                                        if (ch[i + 1].Equals('h')) break;
+                                        else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "k":
+                                        if (ch[i + 1].Equals('n')) break;
                                         else AddSyllable(syllable.InWriting);
                                         break;
                                     case "u":
-                                        if (ch[i + 1].ToString().ToLower().Equals(" ")) AddSyllable("10011");
-                                        else if (ch[i + 1].ToString().ToLower().Equals("l")) AddSyllable("10011");
-                                        else if (ch[i - 1].ToString().ToLower().Equals("r")) AddSyllable("10010");
-                                        else if (ch[i - 1].ToString().ToLower().Equals(" ")) AddSyllable("10010");
-                                        else if (ch[i - 1].ToString().ToLower().Equals("f")) AddSyllable("10010");
-                                        else if (ch[i + 1].ToString().ToLower().Equals("\r")) AddSyllable("10011");
+                                        if ((ch[i + 1].Equals('r')) && (ch[i + 2].Equals('e'))) break;
+                                        else if (ch[i + 1].Equals(' ')) AddSyllable("10011");
+                                        else if (ch[i + 1].Equals('l')) AddSyllable("10011");
+                                        else if (ch[i - 1].Equals('r')) AddSyllable("10010");
+                                        else if (ch[i - 1].Equals(' ')) AddSyllable("10010");
+                                        else if (ch[i - 1].Equals('f')) AddSyllable("10010");
+                                        else if (ch[i + 1].Equals('\r')) AddSyllable("10011");
+                                        else if (ch[i - 1].Equals('o')) AddSyllable("10016");
                                         else AddSyllable(syllable.InWriting);
                                         break;
-                                    case "e":
-                                        if (ch[i - 1].ToString().ToLower().Equals("e")) AddSyllable("10001");
-                                        else if (ch[i - 1].ToString().ToLower().Equals("h")) AddSyllable("10004");
-                                        else if (ch[i + 1].ToString().ToLower().Equals("\r")) break;
-                                        else AddSyllable("10001");
-                                        break;
                                     case "o":
-                                        if (ch[i + 1].ToString().ToLower().Equals("r")) AddSyllable("10007");
+                                        if ((ch[i + 1].Equals('o')) && (ch[i + 2].Equals('r'))) break;
+                                        else if ((ch[i - 1].Equals('o')) && (ch[i + 1].Equals('r'))) break;
+                                        else if ((ch[i - 1].Equals('w'))&&(ch[i+1].Equals('r'))) AddSyllable("10008");
+                                        else if (ch[i + 1].Equals('r')) AddSyllable("10007");
+                                        else if (ch[i + 1].Equals('u')) break;
+                                        else if (ch[i + 1].Equals('i')) break;
+                                        else if (ch[i + 1].Equals('y')) break;
                                         else AddSyllable(syllable.InWriting);
                                         break;
                                     case "r":
-                                        if (ch[i - 1].ToString().ToLower().Equals("o")) break;
+                                        if ((ch[i - 1].Equals('a')) && (ch[i + 1].Equals('e'))) break;
+                                        else if ((ch[i - 1].Equals('i')) && (ch[i - 2].Equals('a'))) AddSyllable("10020");
+                                        else if ((ch[i - 1].Equals('e')) && (ch[i + 1].Equals('e'))) break;
+                                        else if ((ch[i - 1].Equals('e')) && (ch[i - 2].Equals('e'))) AddSyllable("10018");
+                                        else if ((ch[i - 1].Equals('o')) && (ch[i - 2].Equals('o'))) AddSyllable("10019");
+                                        else if ((ch[i - 1].Equals('u')) && (ch[i + 1].Equals('e'))) break;
+                                        else if (ch[i - 1].Equals('o')) break;
+                                        else if (ch[i + 1].Equals('\r')) break;
                                         else AddSyllable(syllable.InWriting);
                                         break;
                                     case "n":
-                                        if (ch[i + 1].ToString().ToLower().Equals("g")) break;
+                                        if (ch[i + 1].Equals('g')) break;
                                         else AddSyllable(syllable.InWriting);
                                         break;
                                     case "g":
-                                        if (ch[i - 1].ToString().ToLower().Equals("n")) AddSyllable("10226");
+                                        if (ch[i - 1].Equals('n')) AddSyllable("10226");
+                                        else if (ch[i + 1].Equals('e')) AddSyllable("10220");
+                                        else if (ch[i + 1].Equals('i')) AddSyllable("10220");
+                                        else if (ch[i + 1].Equals('n')) break;
                                         else AddSyllable(syllable.InWriting);
                                         break;
+                                    case "i":
+                                         if (ch[i - 1].Equals('e')) AddSyllable("10014");
+                                         else if ((ch[i - 1].Equals('a')) && (ch[i + 1].Equals('r'))) break;
+                                         else if (ch[i - 1].Equals('a')) AddSyllable("10014");
+                                         else if (ch[i - 1].Equals('o')) AddSyllable("10015");
+                                         else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "y":
+                                         if (ch[i - 1].Equals('a')) AddSyllable("10014");
+                                         else if (ch[i - 1].Equals('e')) AddSyllable("10014");
+                                         else if (ch[i - 1].Equals('y')) AddSyllable("10015");
+                                         else AddSyllable(syllable.InWriting);
+                                        break;
                                     case "s":
-                                        if (ch[i + 1].ToString().ToLower().Equals("h")) break;
-                                        else if (ch[i + 1].ToString().ToLower().Equals("\r")) AddSyllable("10209");
+                                        if (ch[i + 1].Equals('h')) break;
+                                        else if (ch[i + 1].Equals('\r')) AddSyllable("10209");
+                                        else if (ch[i - 1].Equals('a')) AddSyllable("10209");
+                                        else if (ch[i - 1].Equals('e')) AddSyllable("10209");
+                                        else if (ch[i - 1].Equals('i')) AddSyllable("10209");
+                                        else if (ch[i - 1].Equals('o')) AddSyllable("10209");
+                                        else if (ch[i - 1].Equals('u')) AddSyllable("10209");
+                                        else if (ch[i - 1].Equals('y')) AddSyllable("10209");
+                                        else if (ch[i + 1].Equals('u')) AddSyllable("10217");
                                         else AddSyllable(syllable.InWriting);
+                                        break;
+                                    case "w":
+                                         if ((ch[i + 1].Equals('h')) && (ch[i + 2].Equals('o'))) break;
+                                         else if (ch[i - 1].Equals('e')) AddSyllable("10221");
                                         break;
                                     default:    AddSyllable(syllable.InWriting);    break;
                                 }
@@ -173,7 +322,7 @@ namespace SpeechSynthesis
                 }
             }
 
-            return Transcription;
+            return Transcription;//TODO:
         }
 
         public void CreateSpeach(List<String> queue)

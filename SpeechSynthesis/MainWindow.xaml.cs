@@ -29,7 +29,6 @@ namespace SpeechSynthesis
 
             logic.Dictionary();
 
-
             /*Paragraph outPutString = new Paragraph();
             outPutString.Inlines.Add(logic.GetSyllables());
             richTextBox1.Document.Blocks.Add(outPutString);*/
