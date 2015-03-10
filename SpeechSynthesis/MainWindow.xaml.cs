@@ -56,7 +56,10 @@ namespace SpeechSynthesis
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            thread.Abort();
+            if (thread != null)
+            { 
+                thread.Abort();
+            }
         }
     }
 }
