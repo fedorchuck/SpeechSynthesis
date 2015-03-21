@@ -37,16 +37,18 @@ namespace SpeechSynthesis
         private void Run()
         {
             Logic logic = new Logic();
-            logic.Text = new TextRange(richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd).Text;
-
+            Handler obj = new Handler();
+            
+            String text = obj.HandlerText(new TextRange(richTextBox1.Document.ContentStart, richTextBox1.Document.ContentEnd).Text);
+            
             logic.Dictionary();
 
-            logic.SpeachText(logic.GetSyllables());
+            logic.SpeachText(logic.GetSyllables(text));
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            thread.Abort();
+            if (thread!=null) thread.Abort();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

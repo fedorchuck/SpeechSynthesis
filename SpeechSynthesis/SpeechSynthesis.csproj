@@ -62,8 +62,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IReproduce.cs" />
+    <Compile Include="Handler.cs" />
     <Compile Include="RecordsLibrary.cs" />
     <Compile Include="Serialization.cs" />
+    <Compile Include="Reproduce.cs" />
     <Compile Include="Syllable.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
